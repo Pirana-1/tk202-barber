@@ -195,7 +195,7 @@ navLinks.forEach(link => {
     // Smooth reveal animasyonu
     const revealElements = document.querySelectorAll('.section-title h2, .section-title p');
     revealElements.forEach((el, index) => {
-        el.style.opacity = '0';
+        el.style.opacity = '1';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'all 0.8s ease-out';
         el.style.transitionDelay = `${index * 0.2}s`;
