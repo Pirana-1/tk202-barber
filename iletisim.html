@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - TK202 Barber</title>
+    <link rel="stylesheet" href="ultra-modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+</head>
+<body>
+    <!-- Üst Menü -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TK202<span>Barber</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="calisanlar.html">Çalışanlar</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                    <li><a href="randevu.html" class="btn-randevu">Randevu Al</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <section class="page-header">
+        <div class="container">
+            <h1>İletişim</h1>
+            <p>Bize ulaşın</p>
+        </div>
+    </section>
+
+    <!-- İletişim Bilgileri -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Adres</h3>
+                        <p>Fevzi Çakmak, 19. Sk, 03211 Erkmen/Afyonkarahisar Merkez/Afyonkarahisar</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefon</h3>
+                        <p>+90 530 369 02 20</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>E-posta</h3>
+                        <p>info@tk202barber.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Pazartesi - Cumartesi: 09:00 - 19:00</p>
+                        <p>Pazar: Kapalı</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.109091809067!2d30.4994828!3d38.784133399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cf3d8cdd7928df%3A0x531b23220b66f71a!2sTK%20202%20BARBER!5e0!3m2!1str!2str!4v1748847280090!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Formu -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bize Mesaj Gönderin</h2>
+                <p>Sorularınız veya geri bildirimleriniz için</p>
+            </div>
+            <div class="form-container">
+                <form id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Adınız Soyadınız</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta Adresiniz</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon Numaranız</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Konu</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Konu Seçin</option>
+                                <option value="randevu">Randevu Hakkında</option>
+                                <option value="hizmetler">Hizmetler Hakkında</option>
+                                <option value="fiyatlar">Fiyatlar Hakkında</option>
+                                <option value="oneri">Öneri/Şikayet</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Kişisel verilerimin işlenmesine izin veriyorum.</label>
+                    </div>
+                    <button type="submit" class="btn">Mesaj Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SSS -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sıkça Sorulan Sorular</h2>
+                <p>Merak edilenler</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Randevu almadan gelebilir miyim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Elbette randevusuz da gelebilirsiniz, ancak yoğun saatlerde bekleme süresi olabilir. En iyi hizmeti alabilmeniz için önceden randevu almanızı öneririz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Hangi ödeme yöntemlerini kabul ediyorsunuz?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nakit, kredi kartı, banka kartı ve mobil ödeme yöntemlerini kabul ediyoruz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Randevumu nasıl iptal edebilirim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Randevunuzu en geç 24 saat öncesinden telefonla veya online randevu sistemimiz üzerinden iptal edebilirsiniz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Çocuklar için minimum yaş sınırı var mı?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hayır, her yaştan çocuğa hizmet veriyoruz. Çocuk kesimi konusunda deneyimli berberlerimiz bulunmaktadır.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Kendi ürünlerinizi kullanabilir miyim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, eğer özel bir ürün kullanmanız gerekiyorsa (örneğin alerjik durumlar için), kendi ürünlerinizi getirebilirsiniz. Ancak salonumuzda profesyonel ve kaliteli ürünler kullanıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Altbilgi -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TK202<span>Barber</span></h2>
+                    <p>Profesyonel berber hizmetleri</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="calisanlar.html">Çalışanlar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="randevu.html">Online Randevu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TK202 Barber. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="modern-script.js"></script>
+    <script>
+        // SSS Açılır Kapanır Fonksiyonu
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Aktif soru-cevabı toggle et
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                    
+                    // İkon değişimi
+                    const icon = this.querySelector('i');
+                    if (faqItem.classList.contains('active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

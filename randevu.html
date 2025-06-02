@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Randevu - TK202 Barber</title>
+    <link rel="stylesheet" href="ultra-modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <!-- Üst Menü -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TK202<span>Barber</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="calisanlar.html">Çalışanlar</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="randevu.html" class="btn-randevu active">Randevu Al</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <section class="page-header appointment-header">
+        <div class="container">
+            <h1>Online Randevu</h1>
+            <p>Hemen bir randevu alın</p>
+        </div>
+    </section>
+
+    <!-- Randevu Sistemi -->
+    <section class="appointment-system">
+        <div class="container">
+            <div class="appointment-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Hizmet Seçimi</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Berber Seçimi</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Tarih ve Saat</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Kişisel Bilgiler</div>
+                </div>
+                <div class="step" data-step="5">
+                    <div class="step-number">5</div>
+                    <div class="step-text">Onay</div>
+                </div>
+            </div>
+
+            <div class="appointment-form-container">
+                <form id="appointment-form" class="multi-step-form">
+                    <!-- Adım 1: Hizmet Seçimi -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Hizmet Seçin</h2>
+                        <p>Almak istediğiniz hizmeti seçin</p>
+                        
+                        <div class="service-selection">
+                            <div class="service-card" data-service="sac-kesimi">
+                                <div class="service-icon">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <h3>Saç Kesimi</h3>
+                                <p>Modern ve klasik kesim teknikleri</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 30 dk</span>
+                                    <span class="price">₺100</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="sakal-trasi">
+                                <div class="service-icon">
+                                    <i class="fas fa-razor"></i>
+                                </div>
+                                <h3>Sakal Tıraşı</h3>
+                                <p>Ustura ile profesyonel tıraş</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 20 dk</span>
+                                    <span class="price">₺80</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="sac-boyama">
+                                <div class="service-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h3>Saç Boyama</h3>
+                                <p>Kaliteli ürünlerle saç boyama</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 90 dk</span>
+                                    <span class="price">₺250</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="sac-bakimi">
+                                <div class="service-icon">
+                                    <i class="fas fa-hot-tub"></i>
+                                </div>
+                                <h3>Saç Bakımı</h3>
+                                <p>Saç tipinize özel bakım</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 45 dk</span>
+                                    <span class="price">₺150</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="cocuk-kesimi">
+                                <div class="service-icon">
+                                    <i class="fas fa-child"></i>
+                                </div>
+                                <h3>Çocuk Kesimi</h3>
+                                <p>Çocuklara özel kesim</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 20 dk</span>
+                                    <span class="price">₺70</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="ozel-paket">
+                                <div class="service-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <h3>Özel Paket</h3>
+                                <p>Saç kesimi, sakal tıraşı ve bakım</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 60 dk</span>
+                                    <span class="price">₺200</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input type="hidden" id="selected-service" name="service" required>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn next-step" disabled>Devam Et</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Adım 2: Berber Seçimi -->
+                    <div class="form-step" data-step="2">
+                        <h2>Berber Seçin</h2>
+                        <p>Size hizmet vermesini istediğiniz berberi seçin</p>
+                        
+                        <div class="barber-selection">
+                            <div class="barber-card" data-barber="kazim">
+                                <div class="barber-img">
+                                    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kazım Erol">
+                                </div>
+                                <h3>Kazım Erol</h3>
+                                <p>Dükkan Sahibi</p>
+                                <div class="barber-specialties">
+                                    <span>Klasik Kesim</span>
+                                    <span>Sakal Tıraşı</span>
+                                </div>
+                            </div>
+                            
+                            <div class="barber-card" data-barber="samet">
+                                <div class="barber-img">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Samet">
+                                </div>
+                                <h3>Samet</h3>
+                                <p>Kıdemli Berber</p>
+                                <div class="barber-specialties">
+                                    <span>Sakal Şekillendirme</span>
+                                    <span>Yüz Bakımı</span>
+                                </div>
+                            </div>
+                            
+                            <div class="barber-card" data-barber="burak">
+                                <div class="barber-img">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burak">
+                                </div>
+                                <h3>Burak</h3>
+                                <p>Stilist</p>
+                                <div class="barber-specialties">
+                                    <span>Modern Kesim</span>
+                                    <span>Saç Boyama</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input type="hidden" id="selected-barber" name="barber" required>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Geri</button>
+                            <button type="button" class="btn next-step" disabled>Devam Et</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Adım 3: Tarih ve Saat Seçimi -->
+                    <div class="form-step" data-step="3">
+                        <h2>Tarih ve Saat Seçin</h2>
+                        <p>Size uygun bir tarih ve saat seçin</p>
+                        
+                        <div class="date-time-selection">
+                            <div class="date-selection">
+                                <h3>Tarih</h3>
+                                <div class="calendar-container">
+                                    <div class="calendar-header">
+                                        <button type="button" class="prev-month"><i class="fas fa-chevron-left"></i></button>
+                                        <h4 id="current-month">Mayıs 2025</h4>
+                                        <button type="button" class="next-month"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                    <div class="calendar-grid">
+                                        <div class="calendar-day-header">Pzt</div>
+                                        <div class="calendar-day-header">Sal</div>
+                                        <div class="calendar-day-header">Çar</div>
+                                        <div class="calendar-day-header">Per</div>
+                                        <div class="calendar-day-header">Cum</div>
+                                        <div class="calendar-day-header">Cmt</div>
+                                        <div class="calendar-day-header">Pzr</div>
+                                        <!-- Takvim günleri JavaScript ile doldurulacak -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="time-selection">
+                                <h3>Saat</h3>
+                                <div class="time-slots">
+                                    <!-- Saat dilimleri JavaScript ile doldurulacak -->
+                                    <p class="no-time-message">Lütfen önce bir tarih seçin</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input type="hidden" id="selected-date" name="date" required>
+                        <input type="hidden" id="selected-time" name="time" required>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Geri</button>
+                            <button type="button" class="btn next-step" disabled>Devam Et</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Adım 4: Kişisel Bilgiler -->
+                    <div class="form-step" data-step="4">
+                        <h2>Kişisel Bilgileriniz</h2>
+                        <p>Randevunuzu tamamlamak için bilgilerinizi girin</p>
+                        
+                        <div class="personal-info">
+                            <div class="form-group">
+                                <label for="name">Adınız Soyadınız</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefon Numaranız</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-posta Adresiniz</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notes">Notlar (İsteğe bağlı)</label>
+                                <textarea id="notes" name="notes" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="form-group form-checkbox">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">Kişisel verilerimin işlenmesine izin veriyorum.</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Geri</button>
+                            <button type="button" class="btn next-step">Devam Et</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Adım 5: Onay -->
+                    <div class="form-step" data-step="5">
+                        <h2>Randevu Onayı</h2>
+                        <p>Lütfen randevu bilgilerinizi kontrol edin</p>
+                        
+                        <div class="appointment-summary">
+                            <div class="summary-item">
+                                <h3>Hizmet</h3>
+                                <p id="summary-service">-</p>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <h3>Berber</h3>
+                                <p id="summary-barber">-</p>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <h3>Tarih ve Saat</h3>
+                                <p id="summary-datetime">-</p>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <h3>Kişisel Bilgiler</h3>
+                                <p id="summary-name">-</p>
+                                <p id="summary-phone">-</p>
+                                <p id="summary-email">-</p>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <h3>Notlar</h3>
+                                <p id="summary-notes">-</p>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <h3>Toplam</h3>
+                                <p id="summary-price" class="price">-</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Geri</button>
+                            <button type="submit" class="btn submit-btn">Randevuyu Onayla</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Başarılı Mesajı (Gizli) -->
+                <div class="appointment-success" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Randevunuz Başarıyla Oluşturuldu!</h2>
+                    <p>Randevu bilgileriniz e-posta adresinize gönderilmiştir.</p>
+                    <div class="success-details">
+                        <p><strong>Randevu No:</strong> <span id="appointment-number"></span></p>
+                        <p><strong>Tarih ve Saat:</strong> <span id="appointment-datetime"></span></p>
+                    </div>
+                    <a href="index.html" class="btn">Ana Sayfaya Dön</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Randevu İpuçları -->
+    <section class="appointment-tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Randevu İpuçları</h2>
+                <p>En iyi deneyim için öneriler</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip">
+                    <div class="tip-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3>Zamanında Gelin</h3>
+                    <p>Randevunuzdan 5-10 dakika önce gelmeniz, işlemlerin sorunsuz başlamasını sağlar.</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Referans Getirin</h3>
+                    <p>İstediğiniz saç modelinin bir fotoğrafını getirmeniz, berberinizin sizi daha iyi anlamasını sağlar.</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>İptal Politikası</h3>
+                    <p>Randevunuzu iptal etmeniz gerekiyorsa, lütfen en az 24 saat öncesinden bize bildirin.</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Ödeme Seçenekleri</h3>
+                    <p>Nakit, kredi kartı ve banka kartı ile ödeme yapabilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Altbilgi -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TK202<span>Barber</span></h2>
+                    <p>Profesyonel berber hizmetleri</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="calisanlar.html">Çalışanlar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="randevu.html">Online Randevu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TK202 Barber. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="modern-script.js"></script>
+    <script src="appointment-system.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form adımları
+            const formSteps = document.querySelectorAll('.form-step');
+            const stepIndicators = document.querySelectorAll('.step');
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const form = document.getElementById('appointment-form');
+            const successMessage = document.querySelector('.appointment-success');
+            
+            // Hizmet seçimi
+            const serviceCards = document.querySelectorAll('.service-card');
+            const selectedServiceInput = document.getElementById('selected-service');
+            
+            // Berber seçimi
+            const barberCards = document.querySelectorAll('.barber-card');
+            const selectedBarberInput = document.getElementById('selected-barber');
+            
+            // Tarih ve saat seçimi
+            const selectedDateInput = document.getElementById('selected-date');
+            const selectedTimeInput = document.getElementById('selected-time');
+            const calendarGrid = document.querySelector('.calendar-grid');
+            const timeSlots = document.querySelector('.time-slots');
+            const currentMonthDisplay = document.getElementById('current-month');
+            const prevMonthBtn = document.querySelector('.prev-month');
+            const nextMonthBtn = document.querySelector('.next-month');
+            
+            // Özet bilgileri
+            const summaryService = document.getElementById('summary-service');
+            const summaryBarber = document.getElementById('summary-barber');
+            const summaryDatetime = document.getElementById('summary-datetime');
+            const summaryName = document.getElementById('summary-name');
+            const summaryPhone = document.getElementById('summary-phone');
+            const summaryEmail = document.getElementById('summary-email');
+            const summaryNotes = document.getElementById('summary-notes');
+            const summaryPrice = document.getElementById('summary-price');
+            
+            // Başarılı mesajı
+            const appointmentNumber = document.getElementById('appointment-number');
+            const appointmentDatetime = document.getElementById('appointment-datetime');
+            
+            // Hizmet seçimi
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Aktif kartı güncelle
+                    serviceCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Seçilen hizmeti kaydet
+                    selectedServiceInput.value = this.getAttribute('data-service');
+                    
+                    // Devam butonunu aktifleştir
+                    nextButtons[0].disabled = false;
+                });
+            });
+            
+            // Berber seçimi
+            barberCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Aktif kartı güncelle
+                    barberCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Seçilen berberi kaydet
+                    selectedBarberInput.value = this.getAttribute('data-barber');
+                    
+                    // Devam butonunu aktifleştir
+                    nextButtons[1].disabled = false;
+                });
+            });
+            
+            // Takvim oluşturma
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+            
+            function generateCalendar(month, year) {
+                // Ay adını güncelle
+                const monthNames = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+                currentMonthDisplay.textContent = `${monthNames[month]} ${year}`;
+                
+                // Takvim günlerini temizle
+                while (calendarGrid.children.length > 7) {
+                    calendarGrid.removeChild(calendarGrid.lastChild);
+                }
+                
+                // Ayın ilk gününü al
+                const firstDay = new Date(year, month, 1);
+                // Ayın son gününü al
+                const lastDay = new Date(year, month + 1, 0);
+                
+                // Ayın ilk gününün haftanın hangi günü olduğunu al (0: Pazar, 1: Pazartesi, ...)
+                let firstDayOfWeek = firstDay.getDay();
+                // Pazartesi'yi haftanın ilk günü yap
+                firstDayOfWeek = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+                
+                // Boş günler ekle
+                for (let i = 0; i < firstDayOfWeek; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day empty';
+                    calendarGrid.appendChild(emptyDay);
+                }
+                
+                // Günleri ekle
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                for (let i = 1; i <= lastDay.getDate(); i++) {
+                    const day = document.createElement('div');
+                    day.className = 'calendar-day';
+                    day.textContent = i;
+                    
+                    const currentDateCheck = new Date(year, month, i);
+                    
+                    // Bugünden önceki günleri devre dışı bırak
+                    if (currentDateCheck < today) {
+                        day.classList.add('disabled');
+                    } 
+                    // Pazar günlerini devre dışı bırak
+                    else if (currentDateCheck.getDay() === 0) {
+                        day.classList.add('disabled');
+                        day.setAttribute('title', 'Pazar günleri kapalıyız');
+                    }
+                    // Seçilebilir günler
+                    else {
+                        day.classList.add('selectable');
+                        day.addEventListener('click', function(e) {
+                            e.stopPropagation(); // Olay yayılımını durdur
+                            
+                            // Aktif günü güncelle
+                            document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // Seçilen tarihi kaydet
+                            const selectedDate = new Date(year, month, i);
+                            const formattedDate = `${selectedDate.getDate().toString().padStart(2, '0')}.${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}.${selectedDate.getFullYear()}`;
+                            selectedDateInput.value = formattedDate;
+                            
+                            // Saat dilimlerini oluştur
+                            generateTimeSlots(selectedDate);
+                            
+                            // Devam butonunu aktifleştir
+                            if (selectedTimeInput.value) {
+                                nextButtons[2].disabled = false;
+                            }
+                        });
+                    }
+                    
+                    calendarGrid.appendChild(day);
+                }
+            }
+            
+            // Saat dilimleri oluşturma
+            function generateTimeSlots(date) {
+                // Saat dilimlerini temizle
+                timeSlots.innerHTML = '';
+                
+                // Mesaj elementini kaldır
+                const noTimeMessage = timeSlots.querySelector('.no-time-message');
+                if (noTimeMessage) {
+                    noTimeMessage.remove();
+                }
+                
+                // Çalışma saatleri
+                const workHours = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
+                
+                // Bugün için geçmiş saatleri devre dışı bırak
+                const today = new Date();
+                const isToday = date.getDate() === today.getDate() && 
+                                date.getMonth() === today.getMonth() && 
+                                date.getFullYear() === today.getFullYear();
+                
+                const currentHour = today.getHours();
+                
+                workHours.forEach(time => {
+                    const timeSlot = document.createElement('div');
+                    timeSlot.className = 'time-slot';
+                    timeSlot.textContent = time;
+                    
+                    const hour = parseInt(time.split(':')[0]);
+                    
+                    // Bugün için geçmiş saatleri devre dışı bırak
+                    if (isToday && hour <= currentHour) {
+                        timeSlot.classList.add('disabled');
+                    } else {
+                        timeSlot.classList.add('selectable');
+                        timeSlot.addEventListener('click', function(e) {
+                            e.stopPropagation(); // Olay yayılımını durdur
+                            
+                            // Aktif saat dilimini güncelle
+                            document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // Seçilen saati kaydet
+                            selectedTimeInput.value = time;
+                            
+                            // Devam butonunu aktifleştir
+                            nextButtons[2].disabled = false;
+                        });
+                    }
+                    
+                    timeSlots.appendChild(timeSlot);
+                });
+            }
+            
+            // Takvimi başlat
+            generateCalendar(currentMonth, currentYear);
+            
+            // Önceki ay
+            prevMonthBtn.addEventListener('click', function() {
+                // Bugünden önceki aylara gitmeyi engelle
+                const today = new Date();
+                if (currentYear < today.getFullYear() || 
+                    (currentYear === today.getFullYear() && currentMonth <= today.getMonth())) {
+                    return;
+                }
+                
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                generateCalendar(currentMonth, currentYear);
+            });
+            
+            // Sonraki ay
+            nextMonthBtn.addEventListener('click', function() {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                generateCalendar(currentMonth, currentYear);
+            });
+            
+            // Adımlar arası geçiş
+            function goToStep(stepNumber) {
+                formSteps.forEach(step => {
+                    step.classList.remove('active');
+                });
+                
+                stepIndicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+                
+                formSteps[stepNumber - 1].classList.add('active');
+                
+                // Tüm önceki adımları da aktif et
+                for (let i = 0; i < stepNumber; i++) {
+                    stepIndicators[i].classList.add('active');
+                }
+            }
+            
+            // Sonraki adım butonları
+            nextButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    // Son adımda değilse
+                    if (index < formSteps.length - 1) {
+                        goToStep(index + 2);
+                        
+                        // Son adıma geçildiğinde özet bilgilerini güncelle
+                        if (index === 3) {
+                            updateSummary();
+                        }
+                    }
+                });
+            });
+            
+            // Önceki adım butonları
+            prevButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    goToStep(index + 1);
+                });
+            });
+            
+            // Özet bilgilerini güncelleme
+            function updateSummary() {
+                // Hizmet bilgisi
+                const selectedService = document.querySelector('.service-card.active');
+                if (selectedService) {
+                    summaryService.textContent = selectedService.querySelector('h3').textContent;
+                    summaryPrice.textContent = selectedService.querySelector('.price').textContent;
+                }
+                
+                // Berber bilgisi
+                const selectedBarber = document.querySelector('.barber-card.active');
+                if (selectedBarber) {
+                    summaryBarber.textContent = selectedBarber.querySelector('h3').textContent;
+                }
+                
+                // Tarih ve saat bilgisi
+                if (selectedDateInput.value && selectedTimeInput.value) {
+                    summaryDatetime.textContent = `${selectedDateInput.value} - ${selectedTimeInput.value}`;
+                }
+                
+                // Kişisel bilgiler
+                const nameInput = document.getElementById('name');
+                const phoneInput = document.getElementById('phone');
+                const emailInput = document.getElementById('email');
+                const notesInput = document.getElementById('notes');
+                
+                if (nameInput.value) summaryName.textContent = nameInput.value;
+                if (phoneInput.value) summaryPhone.textContent = phoneInput.value;
+                if (emailInput.value) summaryEmail.textContent = emailInput.value;
+                if (notesInput.value) {
+                    summaryNotes.textContent = notesInput.value;
+                } else {
+                    summaryNotes.textContent = 'Belirtilmedi';
+                }
+            }
+            
+            // Form gönderimi
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Form verilerini al
+                const formData = new FormData(this);
+                const appointmentData = {};
+                
+                for (const [key, value] of formData.entries()) {
+                    appointmentData[key] = value;
+                }
+                
+                // Normalde burada bir API'ye gönderilir, şimdilik konsola yazdıralım
+                console.log('Randevu Bilgileri:', appointmentData);
+                
+                // Randevu numarası oluştur
+                const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+                appointmentNumber.textContent = `TK${randomNum}`;
+                
+                // Randevu tarih ve saatini göster
+                appointmentDatetime.textContent = `${selectedDateInput.value} - ${selectedTimeInput.value}`;
+                
+                // Formu gizle, başarılı mesajını göster
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            });
+            
+            // URL parametrelerini kontrol et
+            function checkUrlParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const barberParam = urlParams.get('barber');
+                
+                if (barberParam) {
+                    // İlk adımı otomatik olarak tamamla
+                    const firstService = document.querySelector('.service-card');
+                    if (firstService) {
+                        firstService.click();
+                        nextButtons[0].click();
+                    }
+                    
+                    // Berber seçimini otomatik olarak yap
+                    const barberCard = document.querySelector(`.barber-card[data-barber="${barberParam}"]`);
+                    if (barberCard) {
+                        barberCard.click();
+                    }
+                }
+            }
+            
+            // URL parametrelerini kontrol et
+            checkUrlParams();
+        });
+    </script>
+</body>
+</html>

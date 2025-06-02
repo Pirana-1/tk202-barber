@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saç Modelleri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hair-style {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            background-color: transparent;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #c59d5f;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Saç Modelleri</h1>
+    <p>Bu sayfada saç modeli simülasyonu için kullanılacak PNG dosyaları oluşturulmuştur.</p>
+    
+    <div class="hair-style">
+        <h2>Kısa Saç</h2>
+        <canvas id="style1" width="500" height="500"></canvas><br>
+        <a href="#" class="download-btn" id="download1">İndir</a>
+    </div>
+    
+    <div class="hair-style">
+        <h2>Orta Uzunlukta Saç</h2>
+        <canvas id="style2" width="500" height="500"></canvas><br>
+        <a href="#" class="download-btn" id="download2">İndir</a>
+    </div>
+    
+    <div class="hair-style">
+        <h2>Uzun Saç</h2>
+        <canvas id="style3" width="500" height="500"></canvas><br>
+        <a href="#" class="download-btn" id="download3">İndir</a>
+    </div>
+    
+    <script>
+        // Kısa saç çizimi
+        function drawShortHair(ctx) {
+            ctx.clearRect(0, 0, 500, 500);
+            
+            // Yüz ovalini çiz (referans için)
+            ctx.beginPath();
+            ctx.ellipse(250, 280, 120, 160, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(200, 200, 200, 0.3)';
+            ctx.stroke();
+            
+            // Saç çizimi
+            ctx.beginPath();
+            ctx.moveTo(130, 280);
+            
+            // Sol taraf
+            ctx.bezierCurveTo(140, 200, 160, 120, 250, 100);
+            
+            // Sağ taraf
+            ctx.bezierCurveTo(340, 120, 360, 200, 370, 280);
+            
+            // Saçı doldur
+            ctx.fillStyle = 'black';
+            ctx.fill();
+        }
+        
+        // Orta uzunlukta saç çizimi
+        function drawMediumHair(ctx) {
+            ctx.clearRect(0, 0, 500, 500);
+            
+            // Yüz ovalini çiz (referans için)
+            ctx.beginPath();
+            ctx.ellipse(250, 280, 120, 160, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(200, 200, 200, 0.3)';
+            ctx.stroke();
+            
+            // Saç çizimi
+            ctx.beginPath();
+            ctx.moveTo(130, 280);
+            
+            // Sol taraf
+            ctx.bezierCurveTo(140, 200, 160, 120, 250, 80);
+            
+            // Sağ taraf
+            ctx.bezierCurveTo(340, 120, 360, 200, 370, 280);
+            
+            // Sol yan saç
+            ctx.lineTo(130, 350);
+            
+            // Sağ yan saç
+            ctx.moveTo(370, 280);
+            ctx.lineTo(370, 350);
+            
+            // Saçı doldur
+            ctx.fillStyle = 'black';
+            ctx.fill();
+        }
+        
+        // Uzun saç çizimi
+        function drawLongHair(ctx) {
+            ctx.clearRect(0, 0, 500, 500);
+            
+            // Yüz ovalini çiz (referans için)
+            ctx.beginPath();
+            ctx.ellipse(250, 280, 120, 160, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(200, 200, 200, 0.3)';
+            ctx.stroke();
+            
+            // Saç çizimi
+            ctx.beginPath();
+            ctx.moveTo(130, 280);
+            
+            // Sol taraf
+            ctx.bezierCurveTo(140, 200, 160, 120, 250, 80);
+            
+            // Sağ taraf
+            ctx.bezierCurveTo(340, 120, 360, 200, 370, 280);
+            
+            // Sol yan saç
+            ctx.bezierCurveTo(130, 350, 120, 400, 150, 450);
+            
+            // Sağ yan saç
+            ctx.moveTo(370, 280);
+            ctx.bezierCurveTo(370, 350, 380, 400, 350, 450);
+            
+            // Saçı doldur
+            ctx.fillStyle = 'black';
+            ctx.fill();
+        }
+        
+        // Canvas'ları çiz
+        const canvas1 = document.getElementById('style1');
+        const ctx1 = canvas1.getContext('2d');
+        drawShortHair(ctx1);
+        
+        const canvas2 = document.getElementById('style2');
+        const ctx2 = canvas2.getContext('2d');
+        drawMediumHair(ctx2);
+        
+        const canvas3 = document.getElementById('style3');
+        const ctx3 = canvas3.getContext('2d');
+        drawLongHair(ctx3);
+        
+        // İndirme butonları
+        document.getElementById('download1').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.download = 'hair-style1.png';
+            link.href = canvas1.toDataURL('image/png');
+            link.click();
+        });
+        
+        document.getElementById('download2').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.download = 'hair-style2.png';
+            link.href = canvas2.toDataURL('image/png');
+            link.click();
+        });
+        
+        document.getElementById('download3').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.download = 'hair-style3.png';
+            link.href = canvas3.toDataURL('image/png');
+            link.click();
+        });
+    </script>
+</body>
+</html>

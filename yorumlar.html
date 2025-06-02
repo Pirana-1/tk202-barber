@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Yorumları - TK202 Barber</title>
+    <link rel="stylesheet" href="ultra-modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    
+</head>
+<body>
+    <!-- Üst Menü -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TK202<span>Barber</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="calisanlar.html">Çalışanlar</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="randevu.html" class="btn-randevu">Randevu Al</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Müşteri Yorumları</h1>
+            <p>Müşterilerimizin deneyimleri</p>
+        </div>
+    </section>
+
+    <!-- Yorum Formu -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="success-message" id="success-message">
+                Yorumunuz başarıyla gönderildi! Onaylandıktan sonra yayınlanacaktır.
+            </div>
+            
+            <div class="review-form">
+                <h3>Deneyiminizi Paylaşın</h3>
+                <form id="review-form">
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Puanınız</label>
+                        <div class="rating-select">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" title="5 yıldız"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" title="4 yıldız"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" title="3 yıldız"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" title="2 yıldız"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="1 yıldız"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Aldığınız Hizmet</label>
+                        <select id="service" name="service" required>
+                            <option value="">Hizmet Seçin</option>
+                            <option value="Saç Kesimi">Saç Kesimi</option>
+                            <option value="Sakal Tıraşı">Sakal Tıraşı</option>
+                            <option value="Saç Boyama">Saç Boyama</option>
+                            <option value="Saç Bakımı">Saç Bakımı</option>
+                            <option value="Çocuk Kesimi">Çocuk Kesimi</option>
+                            <option value="Özel Paket">Özel Paket</option>
+                            <option value="Epilasyon">Epilasyon</option>
+                            <option value="VIP Oda">VIP Oda</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="barber">Berberiniz</label>
+                        <select id="barber" name="barber" required>
+                            <option value="">Berber Seçin</option>
+                            <option value="Kazım Erol">Kazım Erol</option>
+                            <option value="Samet">Samet</option>
+                            <option value="Burak">Burak</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review">Yorumunuz</label>
+                        <textarea id="review" name="review" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Yorumu Gönder</button>
+                </form>
+            </div>
+            
+            <div class="section-title">
+                <h2>Müşteri Yorumları</h2>
+                <p>Müşterilerimizin deneyimleri</p>
+            </div>
+            
+            <div class="review-filter">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="5">5 Yıldız</button>
+                <button class="filter-btn" data-filter="4">4 Yıldız</button>
+                <button class="filter-btn" data-filter="3">3 Yıldız ve Altı</button>
+            </div>
+            
+            <div class="review-list" id="review-list">
+                <div class="review-item" data-rating="5" data-service="Saç Kesimi" data-barber="Kazım Erol">
+                    <div class="review-header">
+                        <span class="review-author">Ahmet Y.</span>
+                        <span class="review-date">28.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>TK202 Barber'da aldığım hizmetten çok memnun kaldım. Kazım Bey çok profesyonel ve işini gerçekten biliyor. Saç kesimim tam istediğim gibi oldu.</p>
+                    </div>
+                </div>
+                <div class="review-item" data-rating="4" data-service="Sakal Tıraşı" data-barber="Samet">
+                    <div class="review-header">
+                        <span class="review-author">Mehmet K.</span>
+                        <span class="review-date">27.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>Sakal tıraşı için gittiğim en iyi yer. Samet Bey'in ellerine sağlık, ustura ile tıraş deneyimi mükemmeldi. Kesinlikle tavsiye ederim.</p>
+                    </div>
+                </div>
+                <div class="review-item" data-rating="5" data-service="Çocuk Kesimi" data-barber="Burak">
+                    <div class="review-header">
+                        <span class="review-author">Ali R.</span>
+                        <span class="review-date">26.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>Oğlumu çocuk kesimi için götürdüm ve çok memnun kaldık. Burak Bey çok sabırlı ve nazikti. Salon çok temiz ve modern. Tekrar geleceğiz.</p>
+                    </div>
+                </div>
+                <div class="review-item" data-rating="5" data-service="VIP Oda" data-barber="Kazım Erol">
+                    <div class="review-header">
+                        <span class="review-author">Mustafa T.</span>
+                        <span class="review-date">25.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>VIP oda deneyimi gerçekten muhteşemdi. Özel ilgi, rahat ortam ve profesyonel hizmet. Kazım Bey'in ellerine sağlık, saç ve sakal kesimi mükemmel oldu.</p>
+                    </div>
+                </div>
+                <div class="review-item" data-rating="4" data-service="Saç Boyama" data-barber="Burak">
+                    <div class="review-header">
+                        <span class="review-author">Hasan Y.</span>
+                        <span class="review-date">24.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>Saç boyama işlemi için Burak Bey'i tercih ettim. Renk tam istediğim gibi oldu. Tek eksik biraz daha hızlı olabilirdi, ama sonuç mükemmel.</p>
+                    </div>
+                </div>
+                <div class="review-item" data-rating="3" data-service="Epilasyon" data-barber="Samet">
+                    <div class="review-header">
+                        <span class="review-author">Kemal D.</span>
+                        <span class="review-date">23.05.2025</span>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="review-content">
+                        <p>Epilasyon hizmeti fena değildi ama biraz acı verici oldu. Samet Bey profesyonel ve nazikti, ancak ağrısız denildiği kadar ağrısız değildi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Altbilgi -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TK202<span>Barber</span></h2>
+                    <p>Profesyonel berber hizmetleri</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="calisanlar.html">Çalışanlar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="randevu.html">Online Randevu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TK202 Barber. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="modern-script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Yorum formu gönderimi
+            const reviewForm = document.getElementById('review-form');
+            const successMessage = document.getElementById('success-message');
+            
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Form verilerini al
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const rating = document.querySelector('input[name="rating"]:checked').value;
+                    const service = document.getElementById('service').value;
+                    const barber = document.getElementById('barber').value;
+                    const review = document.getElementById('review').value;
+                    
+                    // Normalde burada bir API'ye gönderilir, şimdilik konsola yazdıralım
+                    console.log('Yorum Bilgileri:', {
+                        name,
+                        email,
+                        rating,
+                        service,
+                        barber,
+                        review
+                    });
+                    
+                    // Başarılı mesajı göster
+                    successMessage.style.display = 'block';
+                    
+                    // Formu sıfırla
+                    this.reset();
+                    
+                    // 5 saniye sonra mesajı gizle
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                });
+            }
+            
+            // Yorum filtreleme
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const reviewItems = document.querySelectorAll('.review-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Aktif filtre butonunu güncelle
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Seçilen filtreyi al
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Yorumları filtrele
+                    reviewItems.forEach(item => {
+                        const rating = parseInt(item.getAttribute('data-rating'));
+                        
+                        if (filterValue === 'all') {
+                            item.style.display = 'block';
+                        } else if (filterValue === '5' && rating === 5) {
+                            item.style.display = 'block';
+                        } else if (filterValue === '4' && rating === 4) {
+                            item.style.display = 'block';
+                        } else if (filterValue === '3' && rating <= 3) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

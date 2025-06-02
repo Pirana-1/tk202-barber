@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - TK202 Barber</title>
+    <link rel="stylesheet" href="ultra-modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Üst Menü -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TK202<span>Barber</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="calisanlar.html">Çalışanlar</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="randevu.html" class="btn-randevu">Randevu Al</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Galeri</h1>
+            <p>Çalışmalarımızdan örnekler</p>
+        </div>
+    </section>
+
+    <!-- Galeri Kategorileri -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="sac-kesimi">Saç Kesimi</button>
+                <button class="filter-btn" data-filter="sakal">Sakal Tıraşı</button>
+                <button class="filter-btn" data-filter="sac-boyama">Saç Boyama</button>
+                <button class="filter-btn" data-filter="salon">Salon</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-container">
+                <div class="gallery-item" data-category="sac-kesimi">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Modern Kesim">
+                    <div class="overlay">
+                        <h3>Modern Kesim</h3>
+                        <p>Fade tekniği ile modern erkek saç kesimi</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sakal">
+                    <img src="https://images.unsplash.com/photo-1521499892833-773a6c6fd0b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sakal Şekillendirme">
+                    <div class="overlay">
+                        <h3>Sakal Şekillendirme</h3>
+                        <p>Profesyonel sakal şekillendirme ve bakım</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-boyama">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Renk Değişimi">
+                    <div class="overlay">
+                        <h3>Renk Değişimi</h3>
+                        <p>Profesyonel saç boyama ve renk değişimi</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-kesimi">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Klasik Stil">
+                    <div class="overlay">
+                        <h3>Klasik Stil</h3>
+                        <p>Zamansız klasik erkek saç kesimi</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-kesimi">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Çocuk Kesimi">
+                    <div class="overlay">
+                        <h3>Çocuk Kesimi</h3>
+                        <p>Çocuklar için özel saç kesimi</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sakal">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Özel Bakım">
+                    <div class="overlay">
+                        <h3>Özel Bakım</h3>
+                        <p>Sakal ve bıyık için özel bakım uygulaması</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="salon">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Salon İç Mekan">
+                    <div class="overlay">
+                        <h3>Salon İç Mekan</h3>
+                        <p>Modern ve şık salon tasarımımız</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-kesimi">
+                    <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Undercut">
+                    <div class="overlay">
+                        <h3>Undercut</h3>
+                        <p>Modern undercut saç kesimi</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-boyama">
+                    <img src="https://images.unsplash.com/photo-1634302086887-13b5281d8bf8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gri Tonlama">
+                    <div class="overlay">
+                        <h3>Gri Tonlama</h3>
+                        <p>Gri tonlarında saç boyama</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="salon">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Berber Koltuğu">
+                    <div class="overlay">
+                        <h3>Berber Koltuğu</h3>
+                        <p>Klasik berber koltuğumuz</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sakal">
+                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sakal Tıraşı">
+                    <div class="overlay">
+                        <h3>Sakal Tıraşı</h3>
+                        <p>Geleneksel ustura ile sakal tıraşı</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sac-boyama">
+                    <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Renk Geçişi">
+                    <div class="overlay">
+                        <h3>Renk Geçişi</h3>
+                        <p>Ombre tekniği ile saç boyama</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Müşteri Yorumları -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Müşteri Yorumları</h2>
+                <p>Müşterilerimizin deneyimleri</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-img">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Müşteri">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"TK202 Barber'da aldığım hizmetten çok memnun kaldım. Kazım Bey çok profesyonel ve işini gerçekten biliyor. Saç kesimim tam istediğim gibi oldu."</p>
+                        <h4>Ahmet Y.</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Müşteri">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Sakal tıraşı için gittiğim en iyi yer. Samet Bey'in ellerine sağlık, ustura ile tıraş deneyimi mükemmeldi. Kesinlikle tavsiye ederim."</p>
+                        <h4>Mehmet K.</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-img">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Müşteri">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Oğlumu çocuk kesimi için götürdüm ve çok memnun kaldık. Burak Bey çok sabırlı ve nazikti. Salon çok temiz ve modern. Tekrar geleceğiz."</p>
+                        <h4>Ali R.</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Altbilgi -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TK202<span>Barber</span></h2>
+                    <p>Profesyonel berber hizmetleri</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="calisanlar.html">Çalışanlar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="randevu.html">Online Randevu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TK202 Barber. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="modern-script.js"></script>
+    <script>
+        // Galeri filtreleme
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Aktif filtre butonunu güncelle
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Seçilen kategoriyi al
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Galeri öğelerini filtrele
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
