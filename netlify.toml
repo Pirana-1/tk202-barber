@@ -1,0 +1,6 @@
+[build]
+  command = "sed -i 's/window.GITHUB_TOKEN || process.env.GITHUB_TOKEN || null/\"'$GITHUB_TOKEN'\"/g' github-gallery.js"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
