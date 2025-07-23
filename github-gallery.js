@@ -9,6 +9,7 @@ class GithubGallery {
         this.repo = 'tk202-barber';       // Repository adınız
         this.galleryPath = 'assets/gallery';
         this.apiBase = `https://api.github.com/repos/${this.username}/${this.repo}/contents`;
+        this.githubToken = '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'; // GitHub Personal Access Token
         this.categories = {
             'sac-kesimi': 'Saç Kesimi',
             'sakal-trasi': 'Sakal Tıraşı',
@@ -40,12 +41,31 @@ class GithubGallery {
     async fetchFolderContents(folderPath) {
         try {
             console.log(`🔍 API isteği: ${this.apiBase}/${folderPath}`);
-            const response = await fetch(`${this.apiBase}/${folderPath}`);
+            
+            // GitHub token ile API isteği
+            const headers = {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `token ${this.githubToken}`,
+                'User-Agent': 'TK202-Barber-Gallery'
+            };
+            
+            const response = await fetch(`${this.apiBase}/${folderPath}`, {
+                method: 'GET',
+                headers: headers
+            });
+            
             if (!response.ok) {
                 console.error(`❌ API Hatası: ${response.status} - ${response.statusText}`);
                 console.error(`📁 Klasör: ${folderPath}`);
+                
+                if (response.status === 403) {
+                    console.error('🔐 GitHub API rate limit veya yetki sorunu');
+                } else if (response.status === 404) {
+                    console.error('📂 Klasör bulunamadı');
+                }
                 return [];
             }
+            
             const data = await response.json();
             console.log(`✅ ${folderPath} klasöründe ${data.length} dosya bulundu`);
             return data;
