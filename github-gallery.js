@@ -9,7 +9,8 @@ class GithubGallery {
         this.repo = 'tk202-barber';       // Repository adınız
         this.galleryPath = 'assets/gallery';
         this.apiBase = `https://api.github.com/repos/${this.username}/${this.repo}/contents`;
-        this.githubToken = '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'; // GitHub Personal Access Token
+        // Netlify environment variable'dan token al
+        this.githubToken = window.GITHUB_TOKEN || process.env.GITHUB_TOKEN || null;
         this.categories = {
             'sac-kesimi': 'Saç Kesimi',
             'sakal-trasi': 'Sakal Tıraşı',
