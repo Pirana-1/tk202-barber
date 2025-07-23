@@ -79,7 +79,7 @@ class GithubGallery {
         const isVideo = videoExtensions.some(ext => image.name.toLowerCase().endsWith(ext));
         
         const mediaElement = isVideo ?
-            `<video src="${image.download_url}" controls muted loading="lazy" preload="metadata">
+            `<video src="${image.download_url}" controls muted preload="auto" crossorigin="anonymous">
                 <source src="${image.download_url}" type="video/${image.name.split('.').pop()}">
                 Video desteklenmiyor.
             </video>` :
@@ -90,7 +90,7 @@ class GithubGallery {
                 ${mediaElement}
                 <div class="overlay">
                     <h3>${formattedName}</h3>
-                    <p>${categoryName} ${isVideo ? '🎬' : '📷'}</p>
+                    <p>${categoryName}</p>
                 </div>
             </div>
         `;
