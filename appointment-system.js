@@ -87,7 +87,6 @@ function getServiceInfo(serviceKey) {
 function getBarberInfo(barberKey) {
     const barbers = {
         'kazim': { name: 'Kazım Erol', title: 'Dükkan Sahibi' },
-        'samet': { name: 'Samet', title: 'Kıdemli Berber' },
         'burak': { name: 'Burak', title: 'Stilist' }
     };
     return barbers[barberKey] || { name: 'Bilinmeyen', title: '-' };
