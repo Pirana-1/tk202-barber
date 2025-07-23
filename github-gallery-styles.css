@@ -173,19 +173,17 @@
     backdrop-filter: blur(5px);
 }
 
-/* Video controls'ları gizle (hover'da da görünmesin) */
+/* Video controls - her zaman görünür */
+.video-item video {
+    cursor: pointer;
+}
+
 .video-item video::-webkit-media-controls {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1;
 }
 
-.video-item:hover video::-webkit-media-controls {
-    opacity: 0;
-}
-
-/* Sadece tıklandığında controls göster */
-.video-item video:focus::-webkit-media-controls,
-.video-item video:active::-webkit-media-controls {
+/* Firefox için */
+.video-item video::-moz-media-controls {
     opacity: 1;
 }
 
