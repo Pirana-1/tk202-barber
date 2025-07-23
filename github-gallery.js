@@ -39,38 +39,58 @@ class GithubGallery {
     // GitHub API'den klasör içeriğini çek
     async fetchFolderContents(folderPath) {
         try {
+            console.log(`🔍 API isteği: ${this.apiBase}/${folderPath}`);
             const response = await fetch(`${this.apiBase}/${folderPath}`);
             if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                console.error(`❌ API Hatası: ${response.status} - ${response.statusText}`);
+                console.error(`📁 Klasör: ${folderPath}`);
+                return [];
             }
-            return await response.json();
+            const data = await response.json();
+            console.log(`✅ ${folderPath} klasöründe ${data.length} dosya bulundu`);
+            return data;
         } catch (error) {
-            console.error('GitHub API Hatası:', error);
+            console.error('🚨 GitHub API Hatası:', error);
+            console.error(`📁 Problematik klasör: ${folderPath}`);
             return [];
         }
     }
 
-    // Resim dosyalarını filtrele
+    // Medya dosyalarını filtrele (resim + video)
     filterImages(files) {
         const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-        return files.filter(file => 
-            file.type === 'file' && 
-            imageExtensions.some(ext => file.name.toLowerCase().endsWith(ext))
+        const videoExtensions = ['.mp4', '.webm', '.mov'];
+        const allExtensions = [...imageExtensions, ...videoExtensions];
+        
+        return files.filter(file =>
+            file.type === 'file' &&
+            allExtensions.some(ext => file.name.toLowerCase().endsWith(ext))
         );
     }
 
-    // Galeri öğesi HTML'i oluştur
+    // Galeri öğesi HTML'i oluştur (resim + video desteği)
     createGalleryItem(image, category) {
         const categoryName = this.categories[category] || category;
         const imageName = image.name.replace(/\.[^/.]+$/, ""); // Uzantıyı kaldır
         const formattedName = imageName.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         
+        // Video mu resim mi kontrol et
+        const videoExtensions = ['.mp4', '.webm', '.mov'];
+        const isVideo = videoExtensions.some(ext => image.name.toLowerCase().endsWith(ext));
+        
+        const mediaElement = isVideo ?
+            `<video src="${image.download_url}" controls muted loading="lazy" preload="metadata">
+                <source src="${image.download_url}" type="video/${image.name.split('.').pop()}">
+                Video desteklenmiyor.
+            </video>` :
+            `<img src="${image.download_url}" alt="${formattedName}" loading="lazy">`;
+        
         return `
-            <div class="gallery-item" data-category="${category}">
-                <img src="${image.download_url}" alt="${formattedName}" loading="lazy">
+            <div class="gallery-item ${isVideo ? 'video-item' : 'image-item'}" data-category="${category}">
+                ${mediaElement}
                 <div class="overlay">
                     <h3>${formattedName}</h3>
-                    <p>${categoryName}</p>
+                    <p>${categoryName} ${isVideo ? '🎬' : '📷'}</p>
                 </div>
             </div>
         `;
