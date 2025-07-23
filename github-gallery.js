@@ -295,4 +295,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Global export (başka dosyalardan kullanmak için)
 window.GithubGallery = GithubGallery;
-
