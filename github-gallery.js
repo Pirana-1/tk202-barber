@@ -152,6 +152,9 @@ class GithubGallery {
 
         this.hideLoading();
 
+        // Galeri header'ını güncelle
+        this.updateGalleryHeader(totalImages);
+
         if (totalImages === 0) {
             this.showEmptyMessage();
         } else {
@@ -205,6 +208,18 @@ class GithubGallery {
                     </div>
                 </div>
             `;
+        }
+    }
+
+    // Galeri header'ını güncelle
+    updateGalleryHeader(totalImages) {
+        const galleryInfo = document.querySelector('.gallery-info p');
+        if (galleryInfo) {
+            if (totalImages > 0) {
+                galleryInfo.innerHTML = `Yüklendi`;
+            } else {
+                galleryInfo.innerHTML = `Yükleniyor...`;
+            }
         }
     }
 
