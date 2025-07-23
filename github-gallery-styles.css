@@ -148,6 +148,31 @@
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Video stilleri */
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+}
+
+.video-item .overlay {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.video-item .overlay::before {
+    content: "🎬";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
 /* Görsel yüklenirken placeholder */
 .gallery-item img {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -158,6 +183,16 @@
 .gallery-item img[src] {
     background: none;
     animation: none;
+}
+
+/* Video controls styling */
+.video-item video::-webkit-media-controls-panel {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.video-item video::-webkit-media-controls-play-button,
+.video-item video::-webkit-media-controls-volume-slider {
+    filter: brightness(1.2);
 }
 
 @keyframes loading {
