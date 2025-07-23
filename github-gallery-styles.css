@@ -173,6 +173,22 @@
     backdrop-filter: blur(5px);
 }
 
+/* Video controls'ları gizle (hover'da da görünmesin) */
+.video-item video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover video::-webkit-media-controls {
+    opacity: 0;
+}
+
+/* Sadece tıklandığında controls göster */
+.video-item video:focus::-webkit-media-controls,
+.video-item video:active::-webkit-media-controls {
+    opacity: 1;
+}
+
 /* Görsel yüklenirken placeholder */
 .gallery-item img {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
