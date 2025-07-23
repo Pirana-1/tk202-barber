@@ -40,9 +40,6 @@ class GithubGallery {
     // GitHub API'den klasör içeriğini çek
     async fetchFolderContents(folderPath) {
         try {
-            console.log(`🔍 API isteği: ${this.apiBase}/${folderPath}`);
-            
-            // GitHub token ile API isteği
             const headers = {
                 'Accept': 'application/vnd.github.v3+json',
                 'Authorization': `token ${this.githubToken}`,
@@ -55,23 +52,12 @@ class GithubGallery {
             });
             
             if (!response.ok) {
-                console.error(`❌ API Hatası: ${response.status} - ${response.statusText}`);
-                console.error(`📁 Klasör: ${folderPath}`);
-                
-                if (response.status === 403) {
-                    console.error('🔐 GitHub API rate limit veya yetki sorunu');
-                } else if (response.status === 404) {
-                    console.error('📂 Klasör bulunamadı');
-                }
                 return [];
             }
             
             const data = await response.json();
-            console.log(`✅ ${folderPath} klasöründe ${data.length} dosya bulundu`);
             return data;
         } catch (error) {
-            console.error('🚨 GitHub API Hatası:', error);
-            console.error(`📁 Problematik klasör: ${folderPath}`);
             return [];
         }
     }
@@ -128,7 +114,6 @@ class GithubGallery {
                 category: category
             }));
         } catch (error) {
-            console.error(`${category} kategorisinden fotoğraf alınamadı:`, error);
             return [];
         }
     }
@@ -139,7 +124,6 @@ class GithubGallery {
         this.container = document.getElementById(this.containerId) || document.querySelector('.gallery-container');
         
         if (!this.container) {
-            console.error('Galeri container bulunamadı!');
             this.hideLoading();
             return;
         }
@@ -156,8 +140,6 @@ class GithubGallery {
                 const images = this.filterImages(files);
                 
                 if (images.length > 0) {
-                    console.log(`${categoryName}: ${images.length} fotoğraf bulundu`);
-                    
                     // Her resim için HTML oluştur
                     images.forEach(image => {
                         const galleryItemHTML = this.createGalleryItem(image, categoryKey);
@@ -166,7 +148,7 @@ class GithubGallery {
                     });
                 }
             } catch (error) {
-                console.error(`${categoryName} kategorisi yüklenirken hata:`, error);
+                // Sessizce devam et
             }
         }
 
@@ -178,7 +160,6 @@ class GithubGallery {
         if (totalImages === 0) {
             this.showEmptyMessage();
         } else {
-            console.log(`Toplam ${totalImages} fotoğraf yüklendi`);
             this.initializeFilters();
         }
     }
