@@ -13,7 +13,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>TK202<span>Barber</span></h1>
+                <a href="index.html"><h1>TK202<span>Barber</span></h1></a>
             </div>
             <nav>
                 <ul>
@@ -76,7 +76,19 @@
                         <p>Almak istediğiniz hizmeti seçin</p>
                         
                         <div class="service-selection">
-                            <div class="service-card" data-service="sac-kesimi">
+                            <div class="service-card" data-service="sac-sakal" data-price="500">
+                                <div class="service-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <h3>Saç + Sakal</h3>
+                                <p>Saç kesimi ve sakal tıraşı kombini</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 60 dk</span>
+                                    <span class="price">₺500</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="sac-kesimi" data-price="400">
                                 <div class="service-icon">
                                     <i class="fas fa-cut"></i>
                                 </div>
@@ -84,72 +96,76 @@
                                 <p>Modern ve klasik kesim teknikleri</p>
                                 <div class="service-details">
                                     <span class="duration"><i class="far fa-clock"></i> 30 dk</span>
-                                    <span class="price">₺100</span>
+                                    <span class="price">₺400</span>
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="sakal-trasi">
+                            <div class="service-card" data-service="sakal-ustura" data-price="250">
                                 <div class="service-icon">
                                     <i class="fas fa-razor"></i>
                                 </div>
-                                <h3>Sakal Tıraşı</h3>
-                                <p>Ustura ile profesyonel tıraş</p>
+                                <h3>Sakal (Ustura)</h3>
+                                <p>Geleneksel ustura ile tıraş</p>
                                 <div class="service-details">
                                     <span class="duration"><i class="far fa-clock"></i> 20 dk</span>
-                                    <span class="price">₺80</span>
-                                </div>
-                            </div>
-                            
-                            <div class="service-card" data-service="sac-boyama">
-                                <div class="service-icon">
-                                    <i class="fas fa-paint-brush"></i>
-                                </div>
-                                <h3>Saç Boyama</h3>
-                                <p>Kaliteli ürünlerle saç boyama</p>
-                                <div class="service-details">
-                                    <span class="duration"><i class="far fa-clock"></i> 90 dk</span>
                                     <span class="price">₺250</span>
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="sac-bakimi">
-                                <div class="service-icon">
-                                    <i class="fas fa-hot-tub"></i>
-                                </div>
-                                <h3>Saç Bakımı</h3>
-                                <p>Saç tipinize özel bakım</p>
-                                <div class="service-details">
-                                    <span class="duration"><i class="far fa-clock"></i> 45 dk</span>
-                                    <span class="price">₺150</span>
-                                </div>
-                            </div>
-                            
-                            <div class="service-card" data-service="cocuk-kesimi">
+                            <div class="service-card" data-service="cocuk-sac" data-price="300">
                                 <div class="service-icon">
                                     <i class="fas fa-child"></i>
                                 </div>
-                                <h3>Çocuk Kesimi</h3>
-                                <p>Çocuklara özel kesim</p>
+                                <h3>Çocuk Saç</h3>
+                                <p>Çocuklara özel saç kesimi</p>
                                 <div class="service-details">
                                     <span class="duration"><i class="far fa-clock"></i> 20 dk</span>
-                                    <span class="price">₺70</span>
+                                    <span class="price">₺300</span>
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="ozel-paket">
+                            <div class="service-card" data-service="makine" data-price="200">
                                 <div class="service-icon">
-                                    <i class="fas fa-magic"></i>
+                                    <i class="fas fa-tools"></i>
                                 </div>
-                                <h3>Özel Paket</h3>
-                                <p>Saç kesimi, sakal tıraşı ve bakım</p>
+                                <h3>Makine</h3>
+                                <p>Makine ile Sakal Kesimi</p>
                                 <div class="service-details">
-                                    <span class="duration"><i class="far fa-clock"></i> 60 dk</span>
+                                    <span class="duration"><i class="far fa-clock"></i> 15 dk</span>
                                     <span class="price">₺200</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="sakal-fon" data-price="250">
+                                <div class="service-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h3>Sakal Fön</h3>
+                                <p>Sakal şekillendirme ve fön</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 25 dk</span>
+                                    <span class="price">₺250</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="bakim" data-price="0">
+                                <div class="service-icon">
+                                    <i class="fas fa-hot-tub"></i>
+                                </div>
+                                <h3>Bakım</h3>
+                                <p>Saç ve cilt bakımı</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> 30 dk</span>
+                                    <span class="price">Ücretsiz</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <input type="hidden" id="selected-service" name="service" required>
+                        <div class="additional-services-note">
+                            <p><i class="fas fa-info-circle"></i> Diğer özel hizmetlerimiz ve detaylı bilgi için lütfen bizimle iletişime geçin.</p>
+                        </div>
+                        
+                        <input type="hidden" id="selected-services" name="services" required>
                         
                         <div class="form-navigation">
                             <button type="button" class="btn next-step" disabled>Devam Et</button>
@@ -171,18 +187,6 @@
                                 <div class="barber-specialties">
                                     <span>Klasik Kesim</span>
                                     <span>Sakal Tıraşı</span>
-                                </div>
-                            </div>
-                            
-                            <div class="barber-card" data-barber="samet">
-                                <div class="barber-img">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Samet">
-                                </div>
-                                <h3>Samet</h3>
-                                <p>Kıdemli Berber</p>
-                                <div class="barber-specialties">
-                                    <span>Sakal Şekillendirme</span>
-                                    <span>Yüz Bakımı</span>
                                 </div>
                             </div>
                             
@@ -265,12 +269,11 @@
                             
                             <div class="form-group">
                                 <label for="phone">Telefon Numaranız</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">E-posta Adresiniz</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="tel" id="phone" name="phone" required
+                                       pattern="[0-9]{10,11}"
+                                       placeholder="05301234567"
+                                       title="Lütfen geçerli bir telefon numarası girin (10-11 haneli)">
+                                <small class="form-help">Örnek: 05301234567</small>
                             </div>
                             
                             <div class="form-group">
@@ -286,7 +289,7 @@
                         
                         <div class="form-navigation">
                             <button type="button" class="btn prev-step">Geri</button>
-                            <button type="button" class="btn next-step">Devam Et</button>
+                            <button type="button" class="btn next-step" id="personal-info-next">Devam Et</button>
                         </div>
                     </div>
                     
@@ -315,7 +318,6 @@
                                 <h3>Kişisel Bilgiler</h3>
                                 <p id="summary-name">-</p>
                                 <p id="summary-phone">-</p>
-                                <p id="summary-email">-</p>
                             </div>
                             
                             <div class="summary-item">
@@ -331,7 +333,9 @@
                         
                         <div class="form-navigation">
                             <button type="button" class="btn prev-step">Geri</button>
-                            <button type="submit" class="btn submit-btn">Randevuyu Onayla</button>
+                            <button type="submit" class="btn submit-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp ile Randevu Al
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -416,8 +420,8 @@
                     <h3>Bizi Takip Edin</h3>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/tk.202.barber"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/905303690220"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -471,18 +475,32 @@
             const appointmentNumber = document.getElementById('appointment-number');
             const appointmentDatetime = document.getElementById('appointment-datetime');
             
-            // Hizmet seçimi
+            // Hizmet seçimi - Birden fazla seçim sistemi (eski kart tıklama yöntemi)
+            const selectedServicesInput = document.getElementById('selected-services');
+            const selectedServices = [];
+            
             serviceCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    // Aktif kartı güncelle
-                    serviceCards.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
+                    const serviceValue = this.getAttribute('data-service');
                     
-                    // Seçilen hizmeti kaydet
-                    selectedServiceInput.value = this.getAttribute('data-service');
+                    // Eğer kart zaten seçiliyse, seçimi kaldır
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                        const index = selectedServices.indexOf(serviceValue);
+                        if (index > -1) {
+                            selectedServices.splice(index, 1);
+                        }
+                    } else {
+                        // Kart seçiliyse, seçimi ekle
+                        this.classList.add('active');
+                        selectedServices.push(serviceValue);
+                    }
                     
-                    // Devam butonunu aktifleştir
-                    nextButtons[0].disabled = false;
+                    // Seçilen hizmetleri hidden input'a kaydet
+                    selectedServicesInput.value = selectedServices.join(',');
+                    
+                    // En az bir hizmet seçilmişse devam butonunu aktifleştir
+                    nextButtons[0].disabled = selectedServices.length === 0;
                 });
             });
             
@@ -681,6 +699,12 @@
                 for (let i = 0; i < stepNumber; i++) {
                     stepIndicators[i].classList.add('active');
                 }
+                
+                // Sayfayı en üste kaydır
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
             
             // Sonraki adım butonları
@@ -707,11 +731,31 @@
             
             // Özet bilgilerini güncelleme
             function updateSummary() {
-                // Hizmet bilgisi
-                const selectedService = document.querySelector('.service-card.active');
-                if (selectedService) {
-                    summaryService.textContent = selectedService.querySelector('h3').textContent;
-                    summaryPrice.textContent = selectedService.querySelector('.price').textContent;
+                // Hizmet bilgisi - birden fazla hizmet için
+                const selectedServices = document.querySelectorAll('.service-card.active');
+                if (selectedServices.length > 0) {
+                    const serviceNames = Array.from(selectedServices).map(service =>
+                        service.querySelector('h3').textContent
+                    );
+                    summaryService.textContent = serviceNames.join(', ');
+                    
+                    // Toplam fiyat hesaplama
+                    let totalPrice = 0;
+                    selectedServices.forEach(service => {
+                        const priceText = service.querySelector('.price').textContent;
+                        if (priceText !== 'Ücretsiz') {
+                            const price = parseInt(priceText.replace(/[^\d]/g, ''));
+                            if (!isNaN(price)) {
+                                totalPrice += price;
+                            }
+                        }
+                    });
+                    
+                    if (totalPrice > 0) {
+                        summaryPrice.textContent = `₺${totalPrice}`;
+                    } else {
+                        summaryPrice.textContent = 'Ücretsiz';
+                    }
                 }
                 
                 // Berber bilgisi
@@ -728,12 +772,10 @@
                 // Kişisel bilgiler
                 const nameInput = document.getElementById('name');
                 const phoneInput = document.getElementById('phone');
-                const emailInput = document.getElementById('email');
                 const notesInput = document.getElementById('notes');
                 
                 if (nameInput.value) summaryName.textContent = nameInput.value;
                 if (phoneInput.value) summaryPhone.textContent = phoneInput.value;
-                if (emailInput.value) summaryEmail.textContent = emailInput.value;
                 if (notesInput.value) {
                     summaryNotes.textContent = notesInput.value;
                 } else {
@@ -741,31 +783,100 @@
                 }
             }
             
-            // Form gönderimi
+            // Telefon numarası validasyonu
+            function validatePhoneNumber(phone) {
+                // Sadece rakam ve + karakterini kabul et
+                const cleanPhone = phone.replace(/[^\d+]/g, '');
+                
+                // Türk telefon numarası formatları kontrol et
+                const patterns = [
+                    /^05\d{9}$/,           // 05XXXXXXXXX (11 haneli)
+                    /^\+905\d{9}$/,        // +905XXXXXXXXX (13 haneli)
+                    /^5\d{9}$/             // 5XXXXXXXXX (10 haneli)
+                ];
+                
+                return patterns.some(pattern => pattern.test(cleanPhone));
+            }
+            
+            // Kişisel bilgiler adımında validasyon
+            const personalInfoNext = document.getElementById('personal-info-next');
+            personalInfoNext.addEventListener('click', function() {
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const consent = document.getElementById('consent').checked;
+                
+                // Ad soyad kontrolü
+                if (!name || name.length < 2) {
+                    alert('Lütfen adınızı ve soyadınızı girin');
+                    return;
+                }
+                
+                // Telefon numarası kontrolü
+                if (!validatePhoneNumber(phone)) {
+                    alert('Lütfen geçerli bir telefon numarası girin\nÖrnek: 05301234567 veya +905301234567');
+                    return;
+                }
+                
+                // KVKK onayı kontrolü
+                if (!consent) {
+                    alert('Devam etmek için kişisel veri işleme iznini onaylamanız gerekiyor');
+                    return;
+                }
+                
+                // Validasyon başarılı, bir sonraki adıma geç
+                goToStep(5);
+                updateSummary();
+            });
+            
+            // Form gönderimi - WhatsApp entegrasyonu
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 // Form verilerini al
-                const formData = new FormData(this);
-                const appointmentData = {};
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const notes = document.getElementById('notes').value || 'Belirtilmedi';
                 
-                for (const [key, value] of formData.entries()) {
-                    appointmentData[key] = value;
+                // Son kontrol
+                if (!validatePhoneNumber(phone)) {
+                    alert('Geçersiz telefon numarası!');
+                    return;
                 }
                 
-                // Normalde burada bir API'ye gönderilir, şimdilik konsola yazdıralım
-                console.log('Randevu Bilgileri:', appointmentData);
+                // Seçilen hizmetler ve berber bilgilerini al
+                const selectedServiceCards = document.querySelectorAll('.service-card.active');
+                const selectedBarber = document.querySelector('.barber-card.active');
                 
-                // Randevu numarası oluştur
-                const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-                appointmentNumber.textContent = `TK${randomNum}`;
+                // Hizmet adlarını topla
+                const serviceNames = Array.from(selectedServiceCards).map(card =>
+                    card.querySelector('h3').textContent
+                );
+                const serviceName = serviceNames.join(', ');
                 
-                // Randevu tarih ve saatini göster
-                appointmentDatetime.textContent = `${selectedDateInput.value} - ${selectedTimeInput.value}`;
+                const barberName = selectedBarber.querySelector('h3').textContent;
+                const date = selectedDateInput.value;
+                const time = selectedTimeInput.value;
                 
-                // Formu gizle, başarılı mesajını göster
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
+                // WhatsApp mesajını oluştur (emoji'siz, temiz format)
+                const message = `Merhaba, TK202 Barber'dan randevu almak istiyorum.
+
+Ad Soyad: ${name}
+Telefon: ${phone}
+Berber: ${barberName}
+Hizmet: ${serviceName}
+Tarih: ${date}
+Saat: ${time}
+Not: ${notes}
+
+Uygun musunuz?`;
+                
+                // WhatsApp URL'ini oluştur
+                const whatsappNumber = '905303690220';
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // WhatsApp'a yönlendir
+                window.open(whatsappUrl, '_blank');
             });
             
             // URL parametrelerini kontrol et
