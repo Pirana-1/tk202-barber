@@ -100,15 +100,15 @@
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="sakal-ustura" data-price="250">
+                            <div class="service-card" data-service="sakal-ustura" data-price="300">
                                 <div class="service-icon">
                                     <i class="fas fa-razor"></i>
                                 </div>
-                                <h3>Sakal (Ustura)</h3>
+                                <h3>Sakal Tıraşı</h3>
                                 <p>Geleneksel ustura ile tıraş</p>
                                 <div class="service-details">
                                     <span class="duration"><i class="far fa-clock"></i> 20 dk</span>
-                                    <span class="price">₺250</span>
+                                    <span class="price">₺300</span>
                                 </div>
                             </div>
                             
@@ -124,18 +124,6 @@
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="makine" data-price="200">
-                                <div class="service-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <h3>Makine</h3>
-                                <p>Makine ile Sakal Kesimi</p>
-                                <div class="service-details">
-                                    <span class="duration"><i class="far fa-clock"></i> 15 dk</span>
-                                    <span class="price">₺200</span>
-                                </div>
-                            </div>
-                            
                             <div class="service-card" data-service="sakal-fon" data-price="250">
                                 <div class="service-icon">
                                     <i class="fas fa-wind"></i>
@@ -148,15 +136,27 @@
                                 </div>
                             </div>
                             
-                            <div class="service-card" data-service="bakim" data-price="0">
+                            <div class="service-card" data-service="sac-boyama" data-price="contact">
+                                <div class="service-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3>Saç Boyama</h3>
+                                <p>Profesyonel saç boyama ve renklendirme</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="far fa-clock"></i> Değişken</span>
+                                    <span class="price">Fiyat için ulaşın</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card" data-service="bakim" data-price="150">
                                 <div class="service-icon">
                                     <i class="fas fa-hot-tub"></i>
                                 </div>
                                 <h3>Bakım</h3>
-                                <p>Saç ve cilt bakımı</p>
+                                <p>Saç ve cilt bakımı (Saç+Sakal alanlar için ücretsiz)</p>
                                 <div class="service-details">
                                     <span class="duration"><i class="far fa-clock"></i> 30 dk</span>
-                                    <span class="price">Ücretsiz</span>
+                                    <span class="price">₺150</span>
                                 </div>
                             </div>
                         </div>
@@ -271,9 +271,9 @@
                                 <label for="phone">Telefon Numaranız</label>
                                 <input type="tel" id="phone" name="phone" required
                                        pattern="[0-9]{10,11}"
-                                       placeholder="05301234567"
+                                       placeholder="05386540220"
                                        title="Lütfen geçerli bir telefon numarası girin (10-11 haneli)">
-                                <small class="form-help">Örnek: 05301234567</small>
+                                <small class="form-help">Örnek: 05386540220</small>
                             </div>
                             
                             <div class="form-group">
@@ -281,15 +281,11 @@
                                 <textarea id="notes" name="notes" rows="3"></textarea>
                             </div>
                             
-                            <div class="form-group form-checkbox">
-                                <input type="checkbox" id="consent" name="consent" required>
-                                <label for="consent">Kişisel verilerimin işlenmesine izin veriyorum.</label>
-                            </div>
                         </div>
                         
                         <div class="form-navigation">
                             <button type="button" class="btn prev-step">Geri</button>
-                            <button type="button" class="btn next-step" id="personal-info-next">Devam Et</button>
+                            <button type="button" class="btn next-step" id="personal-info-next" disabled>Devam Et</button>
                         </div>
                     </div>
                     
@@ -421,7 +417,7 @@
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="https://instagram.com/tk.202.barber"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/905303690220"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/905386540220"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -496,6 +492,9 @@
                         selectedServices.push(serviceValue);
                     }
                     
+                    // Bakım hizmeti fiyat kontrolü
+                    updateBakimPricing();
+                    
                     // Seçilen hizmetleri hidden input'a kaydet
                     selectedServicesInput.value = selectedServices.join(',');
                     
@@ -503,6 +502,21 @@
                     nextButtons[0].disabled = selectedServices.length === 0;
                 });
             });
+            
+            // Bakım hizmeti fiyatını güncelle
+            function updateBakimPricing() {
+                const bakimCard = document.querySelector('.service-card[data-service="bakim"]');
+                const bakimPriceElement = bakimCard.querySelector('.price');
+                
+                // Saç+Sakal seçiliyse Bakım ücretsiz
+                if (selectedServices.includes('sac-sakal')) {
+                    bakimPriceElement.textContent = 'Ücretsiz';
+                    bakimCard.setAttribute('data-price', '0');
+                } else {
+                    bakimPriceElement.textContent = '₺150';
+                    bakimCard.setAttribute('data-price', '150');
+                }
+            }
             
             // Berber seçimi
             barberCards.forEach(card => {
@@ -612,7 +626,7 @@
                 }
                 
                 // Çalışma saatleri
-                const workHours = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
+                const workHours = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
                 
                 // Bugün için geçmiş saatleri devre dışı bırak
                 const today = new Date();
@@ -709,6 +723,11 @@
             
             // Sonraki adım butonları
             nextButtons.forEach((button, index) => {
+                // Kişisel bilgiler adımı için özel validasyon var, o butonu atla
+                if (button.id === 'personal-info-next') {
+                    return;
+                }
+                
                 button.addEventListener('click', function() {
                     // Son adımda değilse
                     if (index < formSteps.length - 1) {
@@ -741,9 +760,14 @@
                     
                     // Toplam fiyat hesaplama
                     let totalPrice = 0;
+                    let hasContactPrice = false;
                     selectedServices.forEach(service => {
                         const priceText = service.querySelector('.price').textContent;
-                        if (priceText !== 'Ücretsiz') {
+                        const dataPrice = service.getAttribute('data-price');
+                        
+                        if (dataPrice === 'contact' || priceText.includes('ulaşın')) {
+                            hasContactPrice = true;
+                        } else if (priceText !== 'Ücretsiz') {
                             const price = parseInt(priceText.replace(/[^\d]/g, ''));
                             if (!isNaN(price)) {
                                 totalPrice += price;
@@ -751,7 +775,9 @@
                         }
                     });
                     
-                    if (totalPrice > 0) {
+                    if (hasContactPrice) {
+                        summaryPrice.textContent = 'Fiyat için iletişime geçin';
+                    } else if (totalPrice > 0) {
                         summaryPrice.textContent = `₺${totalPrice}`;
                     } else {
                         summaryPrice.textContent = 'Ücretsiz';
@@ -798,12 +824,34 @@
                 return patterns.some(pattern => pattern.test(cleanPhone));
             }
             
-            // Kişisel bilgiler adımında validasyon
+            // Kişisel bilgiler adımında validasyon ve buton kontrolü
             const personalInfoNext = document.getElementById('personal-info-next');
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            
+            // Form alanlarını dinle ve buton durumunu güncelle
+            function checkPersonalInfoForm() {
+                const name = nameInput.value.trim();
+                const phone = phoneInput.value.trim();
+                
+                // En az ad-soyad ve telefon dolu olmalı
+                if (name.length >= 2 && phone.length >= 10) {
+                    personalInfoNext.disabled = false;
+                } else {
+                    personalInfoNext.disabled = true;
+                }
+            }
+            
+            // Input event listener'ları ekle
+            nameInput.addEventListener('input', checkPersonalInfoForm);
+            phoneInput.addEventListener('input', checkPersonalInfoForm);
+            
+            // Sayfa yüklendiğinde kontrol et
+            checkPersonalInfoForm();
+            
             personalInfoNext.addEventListener('click', function() {
-                const name = document.getElementById('name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const consent = document.getElementById('consent').checked;
+                const name = nameInput.value.trim();
+                const phone = phoneInput.value.trim();
                 
                 // Ad soyad kontrolü
                 if (!name || name.length < 2) {
@@ -813,13 +861,7 @@
                 
                 // Telefon numarası kontrolü
                 if (!validatePhoneNumber(phone)) {
-                    alert('Lütfen geçerli bir telefon numarası girin\nÖrnek: 05301234567 veya +905301234567');
-                    return;
-                }
-                
-                // KVKK onayı kontrolü
-                if (!consent) {
-                    alert('Devam etmek için kişisel veri işleme iznini onaylamanız gerekiyor');
+                    alert('Lütfen geçerli bir telefon numarası girin\nÖrnek: 05386540220 veya +905386540220');
                     return;
                 }
                 
@@ -871,7 +913,7 @@ Not: ${notes}
 Uygun musunuz?`;
                 
                 // WhatsApp URL'ini oluştur
-                const whatsappNumber = '905303690220';
+                const whatsappNumber = '905386540220';
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
                 
